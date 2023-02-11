@@ -8,14 +8,14 @@
   <h1>Datenschieber für Ölfeuerung</h1>
   <p>Bitte geben Sie einen Wert ein, den Sie konvertieren wollen.</p>
   <form id="converter">
-    <input type="number" id="value" placeholder="Enter value" required>
+    <input type="number" id="value" placeholder="Wert eingeben" required>
     <select id="from" required>
       <option value="m">Feuerungsleistung</option>
       <option value="cm">Nennwärmeleistung</option>
       <option value="mm">Heizöldurchsatz in l/h</option>
       <option value="km">Heizöldurchsatz in kg/h</option>
     </select>
-    <button type="submit" id="convert">Convert</button>
+    <button type="submit" id="convert">Konvertieren</button>
   </form>
   <table id="result">
     <tr>
@@ -39,22 +39,51 @@
       <td id="km"></td>
     </tr>
     <tr>
-      <td>Düse bei 10 bar Druck (vorgewärmt)</td>
+      <td>Düse bei 10 bar Druck </td>
       <td id="ft"></td>
     </tr>
     <tr>
-      <td>Düse bei 11 bar Druck (vorgewärmt)</td>
+      <td>Düse bei 11 bar Druck</td>
       <td id="in"></td>
     </tr>
     <tr>
-      <td>Düse bei 12 bar Druck (vorgewärmt)</td>
+      <td>Düse bei 12 bar Druck</td>
       <td id="yd"></td>
     </tr>
     <tr>
-      <td>Düse bei 13 bar Druck (vorgewärmt)</td>
+      <td>Düse bei 13 bar Druck</td>
       <td id="mi"></td>
     </tr>
+    <tr>
+      <td>Düse bei 14 bar Druck</td>
+      <td id="m4"></td>
+    </tr>
+    <tr>
+      <td>Düse bei 15 bar Druck</td>
+      <td id="m5"></td>
+    </tr>
+    <tr>
+      <td>Düse bei 16 bar Druck</td>
+      <td id="m6"></td>
+    </tr>
+    <tr>
+      <td>Düse bei 17 bar Druck</td>
+      <td id="m7"></td>
+    </tr>
+    <tr>
+      <td>Düse bei 18 bar Druck</td>
+      <td id="m8"></td>
+    </tr>
   </table>
+
+<!-- <button id="link1">Druck für Düsen</button> -->
+<p id="note">Bei allen Düsen wird eine Ölvorwärmung angenommen.</p>
+
+  <p id="bottom">Erstellt von Jonathan Müller. <br> 2023</p>
+
+
+
+
   <script type="text/javascript" src="conv.js"></script>
 </body>
 </html>
