@@ -108,5 +108,6 @@ tr:nth-child(even) {
 
   form {
     display: block;
+    margin: 10px;
   }
 }
