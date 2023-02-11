@@ -4,6 +4,9 @@ body {
   margin: 0;
   padding: 0;
 }
+p {
+    text-align: center;
+  }
 
 /* Style the h1 element */
 h1 {
