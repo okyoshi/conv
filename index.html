@@ -1,0 +1,64 @@
+<html>
+<head>
+  <title>Unit Converter</title>
+  <link rel="stylesheet" type="text/css" href="conv.css">
+</head>
+<body>
+  <h1>Unit Converter</h1>
+  <p>Enter a value and select the unit to convert from.</p>
+  <form id="converter">
+    <input type="number" id="value" placeholder="Enter value" required>
+    <select id="from" required>
+      <option value="">Select unit</option>
+      <option value="m">Feuerunsleistung</option>
+      <option value="cm">Nennwärmeleistung</option>
+      <option value="mm">Heizöldurchsatz in l/h</option>
+      <option value="km">Heizöldurchsatz in kg/h</option>
+      <option value="in">Inch</option>
+      <option value="ft">Foot</option>
+      <option value="yd">Yard</option>
+      <option value="mi">Mile</option>
+    </select>
+    <button type="submit" id="convert">Convert</button>
+  </form>
+  <table id="result">
+    <tr>
+      <th>Unit</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>Feuerungsleistung</td>
+      <td id="m"></td>
+    </tr>
+    <tr>
+      <td>Nennwärmeleistung</td>
+      <td id="cm"></td>
+    </tr>
+    <tr>
+      <td>Heizöldurchsatz in l/h</td>
+      <td id="mm"></td>
+    </tr>
+    <tr>
+      <td>Heizöldurchsatz in kg/h</td>
+      <td id="km"></td>
+    </tr>
+    <tr>
+      <td>Inch</td>
+      <td id="in"></td>
+    </tr>
+    <tr>
+      <td>Foot</td>
+      <td id="ft"></td>
+    </tr>
+    <tr>
+      <td>Yard</td>
+      <td id="yd"></td>
+    </tr>
+    <tr>
+      <td>Mile</td>
+      <td id="mi"></td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="conv.js"></script>
+</body>
+</html>
