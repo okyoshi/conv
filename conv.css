@@ -110,6 +110,19 @@ tr:nth-child(even) {
   width: 300px;
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+
+
 @media screen and (max-width: 600px) {
   h1 {
     padding: 10px;
@@ -122,5 +135,9 @@ tr:nth-child(even) {
   form {
     display: block;
     margin: 10px;
+  }
+  footer {
+    flex-direction: column;
+    align-items: center;
   }
 }
