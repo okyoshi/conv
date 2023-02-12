@@ -7,10 +7,15 @@ body {
 
 /* Style the h1 element */
 h1 {
-  text-align: center;
+  text-align: left;
   color: black;
   background-color: #fdba1c;
   padding: 20px;
+  font-size: 250%;
+}
+
+h2 {
+  text-align: center;
 }
 
   p {
@@ -95,6 +100,14 @@ tr:nth-child(even) {
 
 #note {
   padding-top: 20px;
+}
+
+.link1 {
+  text-align: center;
+}
+
+.b1 {
+  width: 300px;
 }
 
 @media screen and (max-width: 600px) {
