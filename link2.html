@@ -1,0 +1,87 @@
+<html>
+<head>
+  <title>Datenschieber</title>
+  <link rel="stylesheet" type="text/css" href="l1.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<style>
+/* This CSS code removes the underline from the link */
+a {
+  text-decoration: none;
+}
+
+/* This CSS code makes the result look like a field */
+output {
+  border: 1px solid #ccc;
+  padding: 5px;
+  background: #fff;
+  font-size: 50px;
+  border-radius: 10px;
+  margin: 15px;
+}
+
+#calculate {
+  width: 270px;
+}
+</style>
+<a href="conv.html"><h1>Datenschieber</h1></a>
+<h2>Abgasverlust einer Ölheizung berechnen</h2>
+<p>Geben Sie Ihre Werte ein, um den Abgasverlust zu berechnen.</p>
+<form id="form" method="POST">
+  <label for="tA">ϑ<sub>A</sub> eingeben:</label>
+  <input type="number" id="tA" name="tA">
+  <br>
+  <label for="tL">ϑ<sub>L</sub> eingeben:</label>
+  <input type="number" id="tL" name="tL">
+  <br>
+  <label for="O2">O<sub>2</sub> eingeben:</label>
+  <input type="number" id="O2" name="O2">
+  <br>
+  <label for="qA">Der Abgasverlust q<sub>A</sub> beträgt:</label>
+  <output id="qA" name="qA"></output>
+  <br>
+  <button id="calculate">Abgasverlust q<sub>A</sub> berechnen</button>
+</form>
+
+<p id="bottom">Erstellt von Jonathan Müller.</p>
+<script>
+// This JavaScript code calculates the formula and displays the result
+// Get the input and output elements by their id
+var tA = document.getElementById("tA");
+var tL = document.getElementById("tL");
+var O2 = document.getElementById("O2");
+var qA = document.getElementById("qA");
+var calculate = document.getElementById("calculate");
+var form = document.getElementById("form");
+
+// Define a function that will perform the calculation
+function calculateQA() {
+  // Get the values of the input elements
+  var tAValue = Number(tA.value);
+  var tLValue = Number(tL.value);
+  var O2Value = Number(O2.value);
+
+  // Calculate the formula
+  var qAValue = (tAValue - tLValue) * (0.68 / (21 - O2Value) + 0.007);
+
+  // Add the unit % and round to two decimal places
+  qAValue = qAValue.toFixed(2) + "%";
+
+  // Set the value of the output element
+  qA.value = qAValue;
+}
+
+// Attach the function to the button element
+calculate.addEventListener("click", calculateQA);
+
+// Define a function that will prevent the default behavior of the form submission
+function preventSubmit(event) {
+  // Prevent the default behavior of the form submission
+  event.preventDefault();
+}
+
+// Attach the function to the form element
+form.addEventListener("submit", preventSubmit);
+</script>

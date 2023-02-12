@@ -1,0 +1,103 @@
+<html>
+<head>
+  <title>Datenschieber</title>
+  <link rel="stylesheet" type="text/css" href="l1.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <script>
+// This function calculates the missing value based on the input values
+function calculate() {
+  // Get the values of Q, m and T from the input fields
+  var Q = document.getElementById("Q").value;
+  var m = document.getElementById("m").value;
+  var T = document.getElementById("T").value;
+  // Get the value of c from the select element or the custom input field
+  var c = document.getElementById("c").value;
+  if (c == "custom") {
+    // If the user selected custom, get the value from the custom input field
+    c = document.getElementById("custom-c").value;
+  }
+  // Check which value is missing and calculate it using the formula Q = m * c * T
+  if (Q == "") {
+    // If Q is missing, calculate Q using Q = m * c * T
+    Q = m * c * T;
+    // Round Q to 2 numbers behind the decimal point
+    Q = Q.toFixed(2);
+    // Display the result in the output field
+    document.getElementById("Q").value = Q;
+  } else if (m == "") {
+    // If m is missing, calculate m using m = Q / (c * T)
+    m = Q / (c * T);
+    // Round m to 2 numbers behind the decimal point
+    m = m.toFixed(2);
+    // Display the result in the output field
+    document.getElementById("m").value = m;
+  } else if (T == "") {
+    // If T is missing, calculate T using T = Q / (m * c)
+    T = Q / (m * c);
+    // Round T to 2 numbers behind the decimal point
+    T = T.toFixed(2);
+    // Display the result in the output field
+    document.getElementById("T").value = T;
+  } else {
+    // If none of the values are missing, alert the user to leave one field empty
+    alert("Please leave one field empty to calculate the missing value.");
+  }
+}
+
+// This function shows or hides the custom input field for c based on the user's selection
+function showCustomC() {
+  // Get the value of c from the select element
+  var c = document.getElementById("c").value;
+  if (c == "custom") {
+    // If the user selected custom, show the custom input field
+    document.getElementById("custom-c-div").style.display = "block";
+  } else {
+    // If the user selected a preset value, hide the custom input field
+    document.getElementById("custom-c-div").style.display = "none";
+  }
+}
+// This function clears the input fields
+function clearFields() {
+  // Set the values of Q, m, T and custom-c to empty strings
+  document.getElementById("Q").value = "";
+  document.getElementById("m").value = "";
+  document.getElementById("T").value = "";
+  // document.getElementById("custom-c").value = "";
+  // // Set the value of c to the first option (water)
+  // document.getElementById("c").value = "4186";
+  // // Hide the custom input field
+  // document.getElementById("custom-c-div").style.display = "none";
+}
+</script>
+</head>
+<body>
+  <a href="conv.html"><h1>Der Datenschieber</h1></a>
+  <h2>Heizlast berechnen</h2>
+  <p>Bitte geben Sie drei Werte ein, um den gewünschten Wert berechnen zu können.</p>
+<form>
+  <label for="Q">Q (Wh):</label>
+  <input type="number" id="Q" name="Q"><br>
+  <label for="m">m (kg):</label>
+  <input type="number" id="m" name="m"><br>
+  <label for="c">c (Wh/kg*K):</label>
+  <select id="c" name="c" onchange="showCustomC()">
+    <option value="1.163">Wasser (1.163)</option>
+    <option value="custom">Benutzerdefiniert</option>
+  </select><br>
+  <div id="custom-c-div" style="display: none;">
+    <label for="custom-c">c (Wh/kg*K):</label>
+    <input type="number" id="custom-c" name="custom-c"><br>
+  </div>
+  <label for="T">T (Δϑ):</label>
+  <input type="number" id="T" name="T"><br>
+  <button type="button" onclick="calculate()">Berechnen</button><br>
+  <button type="button" onclick="clearFields()">Clear</button><br>
+</form>
+
+
+
+
+
+  <p id="bottom">Erstellt von Jonathan Müller.</p>
+</body>
+</html>
