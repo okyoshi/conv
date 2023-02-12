@@ -108,6 +108,7 @@ a {
 }
 
 
+
 @media screen and (max-width: 600px) {
   h1 {
     padding: 10px;
@@ -121,4 +122,8 @@ a {
     display: block;
     margin: 10px;
   }
+
+  .xyz {
+  display: flex;
+}
 }

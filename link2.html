@@ -15,19 +15,38 @@ a {
 
 /* This CSS code makes the result look like a field */
 output {
-  border: 1px solid #ccc;
+/*  border: 1px solid #ccc;*/
   padding: 5px;
   background: #fff;
-  font-size: 50px;
+  font-size: 40px;
   border-radius: 10px;
   margin: 15px;
+  text-align: center;
 }
 
 #calculate {
   width: 270px;
 }
+
+@media screen and (max-width: 600px) {
+  output {
+  /*border: 1px solid #ccc;
+  padding: 5px;
+  background: #fff;*/
+  font-size: 30px;
+  border-radius: 10px;
+  margin: 15px;
+  display: flex;
+  text-align: center;
+}
+
+  #abg {
+    margin-top: 50px;
+  }
+}
+
 </style>
-<a href="index.html"><h1>Datenschieber</h1></a>
+<a href="conv.html"><h1>Der Datenschieber</h1></a>
 <h2>Abgasverlust einer Ölheizung berechnen</h2>
 <p>Geben Sie Ihre Werte ein, um den Abgasverlust zu berechnen.</p>
 <form id="form" method="POST">
@@ -40,7 +59,7 @@ output {
   <label for="O2">O<sub>2</sub> eingeben:</label>
   <input type="number" id="O2" name="O2">
   <br>
-  <label for="qA">Der Abgasverlust q<sub>A</sub> beträgt:</label>
+  <label for="qA" id="abg">Der Abgasverlust q<sub>A</sub> beträgt:</label>
   <output id="qA" name="qA"></output>
   <br>
   <button id="calculate">Abgasverlust q<sub>A</sub> berechnen</button>

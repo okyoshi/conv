@@ -1,0 +1,101 @@
+<html>
+<head>
+  <title>Datenschieber</title>
+  <link rel="stylesheet" type="text/css" href="conv.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>Der Datenschieber</h1>
+  <h2>Datenschieber für Ölfeuerung</h2>
+  <p>Bitte geben Sie einen Wert ein, den Sie konvertieren wollen.</p>
+  <form id="converter">
+    <input type="number" id="value" placeholder="Wert eingeben" required>
+    <select id="from" required>
+      <option value="m">Feuerungsleistung</option>
+      <option value="cm">Nennwärmeleistung</option>
+      <option value="mm">Heizöldurchsatz in l/h</option>
+      <option value="km">Heizöldurchsatz in kg/h</option>
+    </select>
+    <button type="submit" id="convert">Konvertieren</button>
+  </form>
+  <table id="result">
+    <tr>
+      <th>Einheit</th>
+      <th>Wert</th>
+    </tr>
+    <tr>
+      <td>Feuerungsleistung</td>
+      <td id="m"></td>
+    </tr>
+    <tr>
+      <td>Nennwärmeleistung (90%)</td>
+      <td id="cm"></td>
+    </tr>
+    <tr>
+      <td>Heizöldurchsatz in l/h</td>
+      <td id="mm"></td>
+    </tr>
+    <tr>
+      <td>Heizöldurchsatz in kg/h</td>
+      <td id="km"></td>
+    </tr>
+    <tr>
+      <td>Düse bei 10 bar Druck </td>
+      <td id="ft"></td>
+    </tr>
+    <tr>
+      <td>Düse bei 11 bar Druck</td>
+      <td id="in"></td>
+    </tr>
+    <tr>
+      <td>Düse bei 12 bar Druck</td>
+      <td id="yd"></td>
+    </tr>
+    <tr>
+      <td>Düse bei 13 bar Druck</td>
+      <td id="mi"></td>
+    </tr>
+    <tr>
+      <td>Düse bei 14 bar Druck</td>
+      <td id="m4"></td>
+    </tr>
+    <tr>
+      <td>Düse bei 15 bar Druck</td>
+      <td id="m5"></td>
+    </tr>
+    <tr>
+      <td>Düse bei 16 bar Druck</td>
+      <td id="m6"></td>
+    </tr>
+    <tr>
+      <td>Düse bei 17 bar Druck</td>
+      <td id="m7"></td>
+    </tr>
+    <tr>
+      <td>Düse bei 18 bar Druck</td>
+      <td id="m8"></td>
+    </tr>
+  </table>
+
+<!-- <button id="link1">Druck für Düsen</button> -->
+<p id="note">Bei allen Düsen wird eine Ölvorwärmung angenommen.</p>
+<div class="link1">
+  <button onclick="window.location.href='link1.html'" class="b1">Heizlast berechnen</button>
+<button onclick="window.location.href='link2.html'" class="b1">Wirkungsgrad berechnen</button>
+</div>
+
+
+
+
+
+
+
+<p id="bottom">Erstellt von Jonathan Müller. <br> 2023</p>
+
+
+
+
+  <script type="text/javascript" src="conv.js"></script>
+</body>
+</html>
