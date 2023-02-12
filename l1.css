@@ -128,7 +128,7 @@ footer {
   }
 
   form {
-    display: block;
+    display: flex;
     margin: 10px;
   }
 
